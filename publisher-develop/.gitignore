@@ -1,0 +1,11 @@
+/patches
+/webpage
+/build
+/temp
+/.rake_t_cache
+publisher.protocol
+/examples
+/atom-schema-speedata
+compare-report.html
+/.vscode
+/publisher.code-workspace

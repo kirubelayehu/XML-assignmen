@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Layout
+  xmlns:sd="urn:speedata:2009/publisher/functions/en"
+  xmlns="urn:speedata.de:2009/publisher/en">
+
+  <Options mainlanguage="English (Great Britain)" />
+  <Trace grid="no" gridallocation="no" objects="no"/>
+
+  <DefineTextformat name="text" alignment="leftaligned"/>
+  <SetGrid width="1cm" height="12pt"/>
+  <Pageformat width="10cm" height="5cm"/>
+
+  <Record element="data">
+    <SetVariable variable="_last_tr_data" select=""/>
+    <PlaceObject column="1">
+      <Table leading="12pt" stretch="max">
+        <Tablefoot>
+          <Tr>
+            <Td><Paragraph>
+              <Value select="$_last_tr_data"/>
+            </Paragraph>
+            </Td>
+          </Tr>
+        </Tablefoot>
+        <ForAll select="entry">
+          <Tr data="string(child)">
+            <Td>
+              <Paragraph>
+                <Value>Position: </Value><Value select="position()"/>
+              </Paragraph>
+            </Td>
+          </Tr>
+        </ForAll>
+      </Table>
+    </PlaceObject>
+  </Record>
+</Layout>
